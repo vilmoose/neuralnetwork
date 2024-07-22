@@ -8,7 +8,7 @@
 */
 
 //Apply; lets us apply a function to a matrix
-func applu(fn func(i, j int, v float64) float64, m mat.Matrix) mat.Matrix {
+func apply(fn func(i, j int, v float64) float64, m mat.Matrix) mat.Matrix {
   r, c := m.Dims()
   o := mat.NewDense(r, c, nil)
   o.Apply(fn, m)
@@ -71,7 +71,7 @@ func addScalar(i float64, m mat.Matrix) mat.Matrix {
 *The actual neural network
 */
 
-/* A simple Feedforward Neural Network with 3 layers
+/* A simple Feedforward Neural Network with 3 layers.
  * inputs: # of neurons for input layer
  * hiddens: # of neurons for hidden layer
  * output: # of neurons for output layer
